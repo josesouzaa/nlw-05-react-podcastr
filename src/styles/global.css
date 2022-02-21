@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #fff;
+
+  --gray-50: #f7f9fa;
+  --gray-100: #e6e8eb;
+  --gray-200: #afb2b1;
+  --gray-500: #808080;
+  --gray-800: #494d4b;
+
+  --green-500: #04d361;
+
+  --purple-300: #9f75ff;
+  --purple-400: #9164fa;
+  --purple-500: #8256e5;
+  --purple-800: #6f48c9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  background: var(--gray-50);
+}
+
+body,
+input,
+textarea,
+button {
+  font: 500 1rem Inter, sans-serif;
+  color: var(--gray-500);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-family: Lexend, sans-serif;
+  color: var(--gray-800);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.firstSpanHome {
+  @apply pr-2 relative after:content-[''] after:w-1 after:h-1 after:rounded-sm after:bg-slate-200 after:absolute after:right-0 after:top-1/2;
+}
+
+.firstSpanHome::after {
+  transform: translate(50%, -50%);
+}
+
+.allEpisodes table thead th,
+.allEpisodes table tbody td {
+  @apply py-3 px-4 border-b border-brandGray-100;
+}
+
+.allEpisodes table thead th {
+  @apply text-brandGray-200 uppercase font-medium text-xs font-title text-left;
+}
+
+.allEpisodes table tbody td {
+  @apply text-sm;
+}
+
+.descriptionSpan::before {
+  @apply absolute content-[''] w-1 h-1 rounded-sm bg-slate-200 left-0 top-1/2;
+  transform: translate(-50%, -50%);
+}
+
+.descriptionText p {
+  margin: 1.5rem 0;
+}
+
+.controllersPlayer button {
+  @apply disabled:cursor-not-allowed disabled:opacity-50 transition;
+}
+
+.controllersPlayer button:hover:not(:disabled) {
+  @apply brightness-75;
+}
+
+.controllersPlayer .playButton:hover:not(:disabled) {
+  @apply brightness-95;
+}
+
+.btnActive {
+  filter: invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+}
+
+.btnActive:hover {
+  filter: brightness(0.6) invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+}
